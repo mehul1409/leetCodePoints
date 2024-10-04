@@ -34,7 +34,7 @@ const Main = () => {
   useEffect(() => {
     const fetchDetails = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/details");
+        const response = await axios.get("https://leetcodepoints.onrender.com/details");
         setDetails(response.data); // Store fetched details in state
       } catch (error) {
         console.error('Error fetching details:', error);
@@ -59,7 +59,7 @@ const Main = () => {
     };
 
     try {
-      const response = await axios.post("http://localhost:8000/addDetail", dataToSend);
+      const response = await axios.post("https://leetcodepoints.onrender.com/addDetail", dataToSend);
       console.log(response.data);
       // Optionally refresh the details list after adding a new entry
       setDetails([...details, response.data]);
